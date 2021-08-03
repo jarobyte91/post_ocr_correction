@@ -1,0 +1,3 @@
+[submodule "lib/pytorch_decoding"]
+	path = lib/pytorch_decoding
+	url = https://github.com/jarobyte91/pytorch_decoding.git
