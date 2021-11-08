@@ -2,20 +2,19 @@
 
 This is the code for the paper.
 
-# Notes
+# Installation
 
-Make sure to install git lfs before cloning this project.
+This project requires [Git LFS](https://git-lfs.github.com/). You can install it with
 
-This project relies on other github repositories. The easiest way to clone is with 
+    git lfs install
 
-**git clone https://github.com/jarobyte91/post_ocr_correction.git --recurse-submodules**
+This project relies on other GitHub repositories. The easiest way to clone is with 
 
-, but if you forgot the --recurse-submodules flag, you can use 
+    git clone https://github.com/jarobyte91/post_ocr_correction.git --recurse-submodules
 
-**git submodule init**
+If you forgot the --recurse-submodules flag, you can use 
 
-and 
+    git submodule init
+    git submodule update
 
-**git submodule update**
-
-to sync all the other subrepos. 
+to sync all the subrepos. 
