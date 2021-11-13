@@ -20,7 +20,7 @@ To correct a string of characters using one of the sequence-to-sequence models
 To evaluate a sequence-to-sequence model on a dataset with all the hyper-parameters
 
     # data is a Pandas DataFrame with two columns: the raw text (ocr_to_input) and  
-    # the correct ranscriptions (gs_aligned), aligned using the @ character 
+    # the correct transcriptions (gs_aligned), aligned using the @ character 
     # (see the paper for more details)
     # model is a PyTorch sequence-to-sequence model
     # vocabulary is a correspondence between integers and tokens 
