@@ -1,6 +1,6 @@
-# post_ocr_correction
+# Post-OCR Document Correction with large Ensembles of Character Sequence Models
 
-This is the code for the paper.
+This is the code for the [paper](https://arxiv.org/abs/2109.06264).
 
 # Installation
 
