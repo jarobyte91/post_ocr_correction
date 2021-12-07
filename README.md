@@ -1,6 +1,6 @@
 # Post-OCR Document Correction with large Ensembles of Character Sequence Models
 
-This is the code for the paper [Post-OCR Document Correction with large Ensembles of Character Sequence Models](https://arxiv.org/abs/2109.06264) by Ramirez-Orta et al.,(2021).
+This is the code for the paper [Post-OCR Document Correction with large Ensembles of Character Sequence Models](https://arxiv.org/abs/2109.06264) by Ramirez-Orta et al., (2021).
 
 # Usage
 
