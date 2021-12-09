@@ -27,9 +27,9 @@ model_id = args.model_id
 language = args.language
 
 print(f"Evaluating {language}...")
-data = pd.read_pickle(f"../data/{language}/data/test.pkl")
+data = pd.read_pickle(f"../data/models/{language}/data/test.pkl")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-with open(f"../data/{language}/{model_id}.arch", "rb") as file:
+with open(f"../data/models/{language}/{model_id}.arch", "rb") as file:
     arch = pickle.load(file)
 arch.pop("model")
 arch.pop("parameters")
@@ -38,8 +38,8 @@ arch["out_vocabulary"] = list(arch["out_vocabulary"].values())[:-3]
 model = seq2seq.Transformer(**arch)
 model.to(device)
 model.eval()
-model.load_state_dict(torch.load(f"../data/{language}/{model_id}.pt", map_location=torch.device('cpu')))
-with open(f"../data/{language}/data/vocabulary.pkl", "rb") as file:
+model.load_state_dict(torch.load(f"../data/models/{language}/{model_id}.pt", map_location=torch.device('cpu')))
+with open(f"../data/models/{language}/data/vocabulary.pkl", "rb") as file:
     vocabulary = pickle.load(file)
 len(vocabulary)
 evaluation = ocr_correction.evaluate_model(raw = data.ocr_to_input, 
