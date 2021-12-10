@@ -62,7 +62,7 @@ Feel free to use the Issue Tracker and to send Pull Requests.
 
 ## Support
 
-Feel free to send an email to jarobyte91@gmail.com
+Feel free to contact me at jarobyte91@gmail.com
 
 ## License
 
