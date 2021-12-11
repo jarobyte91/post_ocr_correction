@@ -58,11 +58,11 @@ to sync all the subrepos.
 
 ## Contribute
 
-Feel free to use the issue tracker on Github and to send Pull Requests to improve the code.
+Feel free to use the Issue Tracker and to send Pull Requests.
 
 ## Support
 
-Feel free to send an email to any of the authors of the paper.
+Feel free to contact me at jarobyte91@gmail.com
 
 ## License
 
