@@ -19,7 +19,7 @@ To correct a string of characters using one of the sequence-to-sequence models
     
 To evaluate a sequence-to-sequence model on a dataset with all the hyper-parameters
 
-    # data is a Pandas DataFrame with two columns: the raw text (ocr_to_input) and  
+    # data is a Pandas DataFrame with two columns: the raw text (ocr_to_input) and
     # the correct transcriptions (gs_aligned), aligned using the @ character 
     # (see the paper for more details)
     # model is a PyTorch sequence-to-sequence model
@@ -41,13 +41,13 @@ To evaluate a sequence-to-sequence model on a dataset with all the hyper-paramet
 
 # Installation
 
-This project requires [Git LFS](https://git-lfs.github.com/). You can install it with
-
-    git lfs install
-
 This project relies on other GitHub repositories. The easiest way to clone is with 
 
     git clone https://github.com/jarobyte91/post_ocr_correction.git --recurse-submodules
+    cd post_ocr_correction
+    pip install -r requirements.txt
+    # To download the datasets and models
+    python download_data.py
 
 If you forgot the --recurse-submodules flag, you can use 
 
