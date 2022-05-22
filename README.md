@@ -27,10 +27,12 @@ To evaluate a sequence-to-sequence model on a dataset with all the hyper-paramet
     # (see the preprocessing notebook in the notebooks folder for each language)
     
     from ocr_correction import evaluate_model
-    evaluation = evaluate_model(raw = data.ocr_to_input, 
-                                gs = data.gs_aligned,
-                                model = model,
-                                vocabulary = vocabulary)
+    evaluation = evaluate_model(
+        raw = data.ocr_to_input, 
+        gs = data.gs_aligned,
+        model = model,
+        vocabulary = vocabulary
+    )
 # Features
 
 * The **data** folder contains the model parameters and architectural specifications to recover the models for each language.
