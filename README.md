@@ -156,12 +156,15 @@ Now you can use them
 ## Installation
 
     pip install post_ocr_correction
+    
     # to download in development mode
     git clone https://github.com/jarobyte91/post_ocr_correction.git
     cd post_ocr_correction
     pip install -e .
+    
     # To download the datasets and models
     python download_data.py
+    
     # To reproduce the results from the paper
     pip install -r requirements.txt
 
