@@ -2,11 +2,9 @@
 
 This is the code for the paper [Post-OCR Document Correction with large Ensembles of Character Sequence Models](https://arxiv.org/abs/2109.06264) by Ramirez-Orta et al., (2021).
 
-Python Package: [https://pypi.org/project/post-ocr-correction/](https://pypi.org/project/post-ocr-correction/)
-
 ## Usage
 
-### Minimal example
+### Train a model from scratch
 
     from pytorch_beam_search import seq2seq
     from post_ocr_correction import correction
@@ -139,8 +137,8 @@ Now you can use them
     )
     
     print("results")
-    print("  test data                      ", test)
     print("  reference                      ", reference)
+    print("  test data                      ", test)
     print("  plain beam search              ", just_beam)
     print("  disjoint windows, beam search  ", disjoint_beam)
     print("  n-grams, beam search, triangle ", n_grams_beam)
@@ -157,18 +155,21 @@ Now you can use them
 
 ## Installation
 
-    pip install post_ocr_correction
-    
-    # to download in development mode
     git clone https://github.com/jarobyte91/post_ocr_correction.git
     cd post_ocr_correction
-    pip install -e .
+    pip install .
     
-    # To download the datasets and models
+To download the datasets and models
+
     python download_data.py
     
-    # To reproduce the results from the paper
+To reproduce the results from the paper
+
     pip install -r requirements.txt
+
+To download the Python package
+
+    pip install post_ocr_correction
 
 ## Contribute
 
