@@ -6,7 +6,8 @@ import re
 from pprint import pprint
 
 # load vocabularies and model
-architecture = pickle.load(open("../data/models/en/model_en.arch", "rb"))
+with open("data/models/en/model_en.arch", "rb") as file:
+    architecture = pickle.load(file)
 source = list(architecture["in_vocabulary"].keys())
 target = list(architecture["out_vocabulary"].values())
 source_index = seq2seq.Index(source)
@@ -20,12 +21,16 @@ for k in [
 ]:
     architecture.pop(k)
 model = seq2seq.Transformer(source_index, target_index, **architecture)
-state_dict = torch.load("../data/models/en/model_en.pt")
+state_dict = torch.load(
+    "data/models/en/model_en.pt",
+    map_location = torch.device("cpu") # comment this line if you have a GPU
+)
 
 # change names from old API of pytorch_beam_search
 state_dict["source_embeddings.weight"] = state_dict.pop("in_embeddings.weight")
 state_dict["target_embeddings.weight"] = state_dict.pop("out_embeddings.weight")
 model.load_state_dict(state_dict)
+model.eval()
 
 # test data
 test = "th1s 1s a c0rrupted str1ng"
@@ -68,8 +73,8 @@ evaluation = correction.full_evaluation(
 )
 
 print("results")
-print("  test data                      ", test)
 print("  reference                      ", reference)
+print("  test data                      ", test)
 print("  plain beam search              ", just_beam)
 print("  disjoint windows, beam search  ", disjoint_beam)
 print("  n-grams, beam search, triangle ", n_grams_beam)

@@ -18,7 +18,9 @@ This is the code for the paper [Post-OCR Document Correction with large Ensemble
     X = source_index.text2tensor(source)
     Y = target_index.text2tensor(target)
     model = seq2seq.Transformer(source_index, target_index)
+    model.train()
     model.fit(X, Y, epochs = 100, progress_bar = 0)
+    model.eval()
     
     # test data
     test = "ghijklmnopqrst"
@@ -73,9 +75,10 @@ Now you can use them
     from post_ocr_correction import correction
     import re
     from pprint import pprint
-    
+
     # load vocabularies and model
-    architecture = pickle.load(open("data/models/en/model_en.arch", "rb"))
+    with open("data/models/en/model_en.arch", "rb") as file:
+        architecture = pickle.load(file)
     source = list(architecture["in_vocabulary"].keys())
     target = list(architecture["out_vocabulary"].values())
     source_index = seq2seq.Index(source)
@@ -89,19 +92,23 @@ Now you can use them
     ]:
         architecture.pop(k)
     model = seq2seq.Transformer(source_index, target_index, **architecture)
-    state_dict = torch.load("data/models/en/model_en.pt")
-    
+    state_dict = torch.load(
+        "data/models/en/model_en.pt",
+        map_location = torch.device("cpu") # comment this line if you have a GPU
+    )
+
     # change names from old API of pytorch_beam_search
     state_dict["source_embeddings.weight"] = state_dict.pop("in_embeddings.weight")
     state_dict["target_embeddings.weight"] = state_dict.pop("out_embeddings.weight")
     model.load_state_dict(state_dict)
-    
+    model.eval()
+
     # test data
     test = "th1s 1s a c0rrupted str1ng"
     reference = "this is a corrupted string"
     new_source = [list(test)]
     X_new = source_index.text2tensor(new_source)
-    
+
     # plain beam search
     predictions, log_probabilities = seq2seq.beam_search(
         model, 
@@ -109,7 +116,7 @@ Now you can use them
         progress_bar = 0)
     just_beam = target_index.tensor2text(predictions[:, 0, :])[0]
     just_beam = re.sub(r"<START>|<PAD>|<UNK>|<END>.*", "", just_beam)
-    
+
     # post ocr correction
     disjoint_beam= correction.disjoint(
         test,
@@ -135,7 +142,7 @@ Now you can use them
         source_index,
         target_index,
     )
-    
+
     print("results")
     print("  reference                      ", reference)
     print("  test data                      ", test)

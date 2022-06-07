@@ -21,7 +21,9 @@ Y = target_index.text2tensor(target, progress_bar = False)
 print("creating model...")
 model = seq2seq.Transformer(source_index, target_index)
 print("training model...")
+model.train()
 model.fit(X, Y, epochs = 100, progress_bar = 0)
+model.eval()
 print("\ntest data")
 test = "ghijklmnopqrst"
 new_source = [list(test)]

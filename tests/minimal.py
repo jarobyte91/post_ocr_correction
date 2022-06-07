@@ -10,7 +10,9 @@ target_index = seq2seq.Index(target)
 X = source_index.text2tensor(source)
 Y = target_index.text2tensor(target)
 model = seq2seq.Transformer(source_index, target_index)
+model.train()
 model.fit(X, Y, epochs = 100, progress_bar = 0)
+model.eval()
 
 # test data
 test = "ghijklmnopqrst"
