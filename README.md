@@ -1,4 +1,4 @@
-# Post-OCR Document Correction with large Ensembles of Character Sequence Models
+# Post-OCR Document Correction with Large Ensembles of Character Sequence-to-Sequence Models 
 
 This is the code for the paper [Post-OCR Document Correction with Large Ensembles of Character Sequence-to-Sequence Models](https://ojs.aaai.org/index.php/AAAI/article/view/21369) and the Arxiv version [Post-OCR Document Correction with large Ensembles of Character Sequence Models](https://arxiv.org/abs/2109.06264) by Ramirez-Orta et al., (2021).
 
