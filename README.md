@@ -178,13 +178,10 @@ To download the Python package
 
     pip install post_ocr_correction
 
-## Contribute
+## Contribute & Support
 
-Feel free to use the Issue Tracker and to send Pull Requests.
-
-## Support
-
-Feel free to contact me at jarobyte91@gmail.com
+* [Issue Tracker](https://github.com/jarobyte91/post_ocr_correction/issues)
+* [Pull Requests](https://github.com/jarobyte91/post_ocr_correction/pulls)
 
 ## License
 
