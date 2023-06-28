@@ -152,7 +152,7 @@ Now you can use them
     print()
     print(evaluation)
 
-## Features
+## Contents
 
 * The **data** folder contains the model parameters and architectural specifications to recover the models for each language.
 * The **evaluate** folder contains the scripts to reproduce the evaluation results from the paper.
