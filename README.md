@@ -1,6 +1,13 @@
 # Post-OCR Document Correction with Large Ensembles of Character Sequence-to-Sequence Models 
 
-This is the code for the paper [Post-OCR Document Correction with Large Ensembles of Character Sequence-to-Sequence Models](https://ojs.aaai.org/index.php/AAAI/article/view/21369) and the Arxiv version [Post-OCR Document Correction with large Ensembles of Character Sequence Models](https://arxiv.org/abs/2109.06264) by Ramirez-Orta et al., (2021).
+This is the source code for the paper *Post-OCR Document Correction with Large Ensembles of Character Sequence-to-Sequence Models* by Ramirez-Orta et al., (2021).
+
+* [AAAI version](https://ojs.aaai.org/index.php/AAAI/article/view/21369)
+* [Arxiv Preprint](https://arxiv.org/abs/2109.06264) 
+
+## Abstract
+
+In this paper, we propose a novel method to extend sequence-to-sequence models to accurately process sequences much longer than the ones used during training while being sample-and resource-efficient, supported by thorough experimentation. To investigate the effectiveness of our method, we apply it to the task of correcting documents already processed with Optical Character Recognition (OCR) systems using sequence-to-sequence models based on characters. We test our method on nine languages of the ICDAR 2019 competition on post-OCR text correction and achieve a new state-of-the-art performance in five of them. The strategy with the best performance involves splitting the input document in character n-grams and combining their individual corrections into the final output using a voting scheme that is equivalent to an ensemble of a large number of sequence models. We further investigate how to weigh the contributions from each one of the members of this ensemble.
 
 ## Usage
 
@@ -61,7 +68,7 @@ This is the code for the paper [Post-OCR Document Correction with Large Ensemble
     print("  disjoint windows, beam search  ", disjoint_beam)
     print("  n-grams, beam search, triangle ", n_grams_beam)
 
-### Load one of the pre-trained models
+### Load the pre-trained models
 
 First download the models
  
@@ -173,8 +180,9 @@ To download the datasets and models
 To reproduce the results from the paper
 
     pip install -r requirements.txt
+    cd notebooks
 
-To download the Python package
+To install the Python package
 
     pip install post_ocr_correction
 
