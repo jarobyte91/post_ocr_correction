@@ -11,7 +11,7 @@ In this paper, we propose a novel method to extend sequence-to-sequence models t
 
 ## Usage
 
-### Train a model from scratch
+### Train a new model from scratch
 
     from pytorch_beam_search import seq2seq
     from post_ocr_correction import correction
@@ -68,7 +68,7 @@ In this paper, we propose a novel method to extend sequence-to-sequence models t
     print("  disjoint windows, beam search  ", disjoint_beam)
     print("  n-grams, beam search, triangle ", n_grams_beam)
 
-### Load the pre-trained models
+### Load one of the pre-trained models
 
 First download the models
  
@@ -83,7 +83,8 @@ Now you can use them
     import re
     from pprint import pprint
 
-    # load vocabularies and model
+    # load vocabularies and model, in this case, we are loading
+    # the english model
     with open("data/models/en/model_en.arch", "rb") as file:
         architecture = pickle.load(file)
     source = list(architecture["in_vocabulary"].keys())
