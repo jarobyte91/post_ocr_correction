@@ -17,13 +17,15 @@ In this paper, we propose a novel method to extend sequence-to-sequence models t
     from post_ocr_correction import correction
     import re
     
-    # train data and model
+    # training data
     source = [list("abcdefghijkl"), list("mnopqrstwxyz")]
     target = [list("abcdefghijk"), list("mnopqrstwxy")]
     source_index = seq2seq.Index(source)
     target_index = seq2seq.Index(target)
     X = source_index.text2tensor(source)
     Y = target_index.text2tensor(target)
+
+    # model
     model = seq2seq.Transformer(source_index, target_index)
     model.train()
     model.fit(X, Y, epochs = 100, progress_bar = 0)
@@ -91,6 +93,7 @@ Now you can use them
     target = list(architecture["out_vocabulary"].values())
     source_index = seq2seq.Index(source)
     target_index = seq2seq.Index(target)
+    
     # remove keys from old API of pytorch_beam_search
     for k in [
        "in_vocabulary",
