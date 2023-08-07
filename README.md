@@ -165,7 +165,7 @@ Now you can use them
 
 ## Contents
 
-* The **data** folder contains the model parameters and architectural specifications to recover the models for each language.
+* The **data** folder contains the model parameters and architecture specifications to reconstruct the models for each language.
 * The **evaluate** folder contains the scripts to reproduce the evaluation results from the paper.
 * The **lib** folder contains the code to use the sequence-to-sequence models to correct very long strings of characters, to compute the metrics used in the paper and the source code of the sequence-to-sequence models.
 * The **notebooks** folder contains the Jupyter Notebooks to build the datasets required to train the sequence-to-sequence models, as well as the exploratory data analysis of the data from the [ICDAR 2019 competition](https://sites.google.com/view/icdar2019-postcorrectionocr).
