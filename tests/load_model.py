@@ -12,6 +12,7 @@ source = list(architecture["in_vocabulary"].keys())
 target = list(architecture["out_vocabulary"].values())
 source_index = seq2seq.Index(source)
 target_index = seq2seq.Index(target)
+
 # remove keys from old API of pytorch_beam_search
 for k in [
    "in_vocabulary",
