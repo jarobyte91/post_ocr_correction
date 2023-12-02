@@ -12,7 +12,9 @@ In this paper, we propose a novel method to extend sequence-to-sequence models t
 ## Usage
 
 * [Train a new model from scratch](tutorials/new_model.ipynb)
+* [Train a new model from scratch](tests/minimal.py)
 * [Load one of the pre-trained models](tutorials/load_model.ipynb)
+* [Load one of the pre-trained models](tests/load_model.py)
 
 ## Contents
 
