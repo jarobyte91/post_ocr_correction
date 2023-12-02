@@ -51,3 +51,4 @@ To install the Python package
 ## License
 
 The project is licensed under the MIT License.
+
