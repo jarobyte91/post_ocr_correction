@@ -11,18 +11,18 @@ In this paper, we propose a novel method to extend sequence-to-sequence models t
 
 ## Usage
 
-* [Train a new model from scratch](tutorials/new_model.ipynb)
-* [Train a new model from scratch](tests/minimal.py)
+* [Train a new model on your own data](tutorials/new_model.ipynb)
 * [Load one of the pre-trained models](tutorials/load_model.ipynb)
-* [Load one of the pre-trained models](tests/load_model.py)
 
 ## Contents
 
-* The **data** folder contains the model parameters and architecture specifications to reconstruct the models for each language.
+* The **data** folder contains the model parameters and architecture specifications to reconstruct the models for each language (this is created after running *download_data.py*).
 * The **evaluate** folder contains the scripts to reproduce the evaluation results from the paper.
 * The **lib** folder contains the code to use the sequence-to-sequence models to correct very long strings of characters, to compute the metrics used in the paper and the source code of the sequence-to-sequence models.
 * The **notebooks** folder contains the Jupyter Notebooks to build the datasets required to train the sequence-to-sequence models, as well as the exploratory data analysis of the data from the [ICDAR 2019 competition](https://sites.google.com/view/icdar2019-postcorrectionocr).
+* The **tests** folder contains scripts to test the installation of the repository.
 * The **train** folder contains the scripts with hyper-parameters to train the models shown in the paper.
+* The **tutorials** folder contains use cases on how to use the library.
 
 ## Installation
 
